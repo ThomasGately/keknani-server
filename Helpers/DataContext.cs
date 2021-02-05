@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using keknani_server.Entities;
+using System;
 
 namespace keknani_server.Helpers
 {
@@ -20,6 +21,15 @@ namespace keknani_server.Helpers
         {
             // connect to sqlite database
             options.UseSqlite(Configuration.GetConnectionString("keknani_serverDatabase"));
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Dog>()
+            .Property(e => e.ImgPaths)
+            .HasConversion(
+                v => string.Join(',', v),
+                v => v.Split(',', StringSplitOptions.RemoveEmptyEntries));
         }
     }
 }

@@ -14,7 +14,7 @@ namespace keknani_server.Entities
         public string Neutered { get; set; }
         public string Sex { get; set; }
         public string Description { get; set; }
-        public List<string> ImgPaths { get; set; }
+        public string[] ImgPaths { get; set; }
         public DateTime Created { get; set; }
         public DateTime? Updated { get; set; }
     }
