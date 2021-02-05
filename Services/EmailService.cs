@@ -23,7 +23,7 @@ namespace WebApi.Services
 
         public void Send(string to, string subject, string html, string from = null)
         {
-            // create message
+            /* // create message
             var email = new MimeMessage();
             email.From.Add(MailboxAddress.Parse(from ?? _appSettings.EmailFrom));
             email.To.Add(MailboxAddress.Parse(to));
@@ -35,7 +35,7 @@ namespace WebApi.Services
             smtp.Connect(_appSettings.SmtpHost, _appSettings.SmtpPort, SecureSocketOptions.StartTls);
             smtp.Authenticate(_appSettings.SmtpUser, _appSettings.SmtpPass);
             smtp.Send(email);
-            smtp.Disconnect(true);
+            smtp.Disconnect(true); */
         }
     }
 }
