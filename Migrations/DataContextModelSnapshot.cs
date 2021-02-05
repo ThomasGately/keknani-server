@@ -3,9 +3,9 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using WebApi.Helpers;
+using keknani_server.Helpers;
 
-namespace WebApi.Migrations
+namespace keknani_server.Migrations
 {
     [DbContext(typeof(DataContext))]
     partial class DataContextModelSnapshot : ModelSnapshot
@@ -16,7 +16,7 @@ namespace WebApi.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "3.1.5");
 
-            modelBuilder.Entity("WebApi.Entities.Account", b =>
+            modelBuilder.Entity("keknani_server.Entities.Account", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -69,9 +69,9 @@ namespace WebApi.Migrations
                     b.ToTable("Accounts");
                 });
 
-            modelBuilder.Entity("WebApi.Entities.Account", b =>
+            modelBuilder.Entity("keknani_server.Entities.Account", b =>
                 {
-                    b.OwnsMany("WebApi.Entities.RefreshToken", "RefreshTokens", b1 =>
+                    b.OwnsMany("keknani_server.Entities.RefreshToken", "RefreshTokens", b1 =>
                         {
                             b1.Property<int>("Id")
                                 .ValueGeneratedOnAdd()

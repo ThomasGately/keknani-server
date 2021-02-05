@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace WebApi.Entities
+namespace keknani_server.Entities
 {
     [Owned]
     public class RefreshToken

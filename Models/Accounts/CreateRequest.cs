@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
-using WebApi.Entities;
+using keknani_server.Entities;
 
-namespace WebApi.Models.Accounts
+namespace keknani_server.Models.Accounts
 {
     public class CreateRequest
     {

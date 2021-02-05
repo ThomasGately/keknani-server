@@ -1,13 +1,13 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using WebApi.Entities;
+using keknani_server.Entities;
 
-namespace WebApi.Helpers
+namespace keknani_server.Helpers
 {
     public class DataContext : DbContext
     {
         public DbSet<Account> Accounts { get; set; }
-        
+
         private readonly IConfiguration Configuration;
 
         public DataContext(IConfiguration configuration)
@@ -18,7 +18,7 @@ namespace WebApi.Helpers
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
             // connect to sqlite database
-            options.UseSqlite(Configuration.GetConnectionString("WebApiDatabase"));
+            options.UseSqlite(Configuration.GetConnectionString("keknani_serverDatabase"));
         }
     }
 }

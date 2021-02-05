@@ -1,4 +1,4 @@
-namespace WebApi.Models.Accounts
+namespace keknani_server.Models.Accounts
 {
     public class RevokeTokenRequest
     {

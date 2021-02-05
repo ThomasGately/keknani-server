@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace WebApi.Entities
+namespace keknani_server.Entities
 {
     public class Account
     {
@@ -23,7 +23,7 @@ namespace WebApi.Entities
         public DateTime? Updated { get; set; }
         public List<RefreshToken> RefreshTokens { get; set; }
 
-        public bool OwnsToken(string token) 
+        public bool OwnsToken(string token)
         {
             return this.RefreshTokens?.Find(x => x.Token == token) != null;
         }

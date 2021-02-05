@@ -1,8 +1,8 @@
 using AutoMapper;
-using WebApi.Entities;
-using WebApi.Models.Accounts;
+using keknani_server.Entities;
+using keknani_server.Models.Accounts;
 
-namespace WebApi.Helpers
+namespace keknani_server.Helpers
 {
     public class AutoMapperProfile : Profile
     {

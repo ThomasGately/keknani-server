@@ -3,9 +3,9 @@ using MailKit.Security;
 using Microsoft.Extensions.Options;
 using MimeKit;
 using MimeKit.Text;
-using WebApi.Helpers;
+using keknani_server.Helpers;
 
-namespace WebApi.Services
+namespace keknani_server.Services
 {
     public interface IEmailService
     {

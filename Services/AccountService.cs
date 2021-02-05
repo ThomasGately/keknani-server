@@ -9,11 +9,11 @@ using System.Linq;
 using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
-using WebApi.Entities;
-using WebApi.Helpers;
-using WebApi.Models.Accounts;
+using keknani_server.Entities;
+using keknani_server.Helpers;
+using keknani_server.Models.Accounts;
 
-namespace WebApi.Services
+namespace keknani_server.Services
 {
     public interface IAccountService
     {

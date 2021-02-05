@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace WebApi.Migrations
+namespace keknani_server.Migrations
 {
     public partial class InitialCreate : Migration
     {

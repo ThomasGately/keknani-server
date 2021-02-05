@@ -3,11 +3,11 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
-using WebApi.Entities;
-using WebApi.Models.Accounts;
-using WebApi.Services;
+using keknani_server.Entities;
+using keknani_server.Models.Accounts;
+using keknani_server.Services;
 
-namespace WebApi.Controllers
+namespace keknani_server.Controllers
 {
     [ApiController]
     [Route("[controller]")]

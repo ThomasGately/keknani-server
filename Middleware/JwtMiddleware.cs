@@ -6,9 +6,9 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WebApi.Helpers;
+using keknani_server.Helpers;
 
-namespace WebApi.Middleware
+namespace keknani_server.Middleware
 {
     public class JwtMiddleware
     {
@@ -53,7 +53,7 @@ namespace WebApi.Middleware
                 // attach account to context on successful jwt validation
                 context.Items["Account"] = await dataContext.Accounts.FindAsync(accountId);
             }
-            catch 
+            catch
             {
                 // do nothing if jwt validation fails
                 // account is not attached to context so request won't have access to secure routes

@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Net;
 using System.Text.Json;
 using System.Threading.Tasks;
-using WebApi.Helpers;
+using keknani_server.Helpers;
 
-namespace WebApi.Middleware
+namespace keknani_server.Middleware
 {
     public class ErrorHandlerMiddleware
     {
@@ -28,7 +28,7 @@ namespace WebApi.Middleware
                 var response = context.Response;
                 response.ContentType = "application/json";
 
-                switch(error)
+                switch (error)
                 {
                     case AppException e:
                         // custom application error

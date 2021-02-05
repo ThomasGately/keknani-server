@@ -1,4 +1,4 @@
-namespace WebApi.Helpers
+namespace keknani_server.Helpers
 {
     public class AppSettings
     {

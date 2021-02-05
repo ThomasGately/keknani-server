@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
-using WebApi.Helpers;
-using WebApi.Middleware;
-using WebApi.Services;
+using keknani_server.Helpers;
+using keknani_server.Middleware;
+using keknani_server.Services;
 
-namespace WebApi
+namespace keknani_server
 {
     public class Startup
     {

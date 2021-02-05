@@ -1,4 +1,4 @@
-namespace WebApi.Entities
+namespace keknani_server.Entities
 {
     public enum Role
     {
