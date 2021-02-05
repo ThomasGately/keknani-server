@@ -7,6 +7,7 @@ namespace keknani_server.Helpers
     public class DataContext : DbContext
     {
         public DbSet<Account> Accounts { get; set; }
+        public DbSet<Dog> Dogs { get; set; }
 
         private readonly IConfiguration Configuration;
 

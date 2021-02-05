@@ -116,7 +116,7 @@ namespace keknani_server.Controllers
 
         [Authorize(Role.Admin)]
         [HttpPost]
-        public ActionResult<AccountResponse> Create(CreateRequest model)
+        public ActionResult<AccountResponse> Create(AccountCreateRequest model)
         {
             var account = _accountService.Create(model);
             return Ok(account);
@@ -124,7 +124,7 @@ namespace keknani_server.Controllers
 
         [Authorize]
         [HttpPut("{id:int}")]
-        public ActionResult<AccountResponse> Update(int id, UpdateRequest model)
+        public ActionResult<AccountResponse> Update(int id, AccountUpdateRequest model)
         {
             // users can update their own account and admins can update any account
             if (id != Account.Id && Account.Role != Role.Admin)

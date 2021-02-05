@@ -27,8 +27,8 @@ namespace keknani_server.Services
         void ResetPassword(ResetPasswordRequest model);
         IEnumerable<AccountResponse> GetAll();
         AccountResponse GetById(int id);
-        AccountResponse Create(CreateRequest model);
-        AccountResponse Update(int id, UpdateRequest model);
+        AccountResponse Create(AccountCreateRequest model);
+        AccountResponse Update(int id, AccountUpdateRequest model);
         void Delete(int id);
     }
 
@@ -214,7 +214,7 @@ namespace keknani_server.Services
             return _mapper.Map<AccountResponse>(account);
         }
 
-        public AccountResponse Create(CreateRequest model)
+        public AccountResponse Create(AccountCreateRequest model)
         {
             // validate
             if (_context.Accounts.Any(x => x.Email == model.Email))
@@ -235,7 +235,7 @@ namespace keknani_server.Services
             return _mapper.Map<AccountResponse>(account);
         }
 
-        public AccountResponse Update(int id, UpdateRequest model)
+        public AccountResponse Update(int id, AccountUpdateRequest model)
         {
             var account = getAccount(id);
 

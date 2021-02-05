@@ -3,7 +3,7 @@ using keknani_server.Entities;
 
 namespace keknani_server.Models.Accounts
 {
-    public class CreateRequest
+    public class AccountCreateRequest
     {
         [Required]
         public string Title { get; set; }

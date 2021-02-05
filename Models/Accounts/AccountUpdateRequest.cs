@@ -3,7 +3,7 @@ using keknani_server.Entities;
 
 namespace keknani_server.Models.Accounts
 {
-    public class UpdateRequest
+    public class AccountUpdateRequest
     {
         private string _password;
         private string _confirmPassword;
