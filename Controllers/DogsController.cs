@@ -28,7 +28,7 @@ namespace keknani_server.Controllers
             _mapper = mapper;
         }
 
-        [Authorize(Role.Admin)]
+        //[Authorize(Role.Admin)]
         [HttpGet]
         public ActionResult<IEnumerable<DogResponse>> GetAll()
         {
@@ -36,7 +36,7 @@ namespace keknani_server.Controllers
             return Ok(dogs);
         }
 
-        [Authorize(Role.Admin)]
+        //[Authorize(Role.Admin)]
         [HttpGet("{id:int}")]
         public ActionResult<DogResponse> GetById(int id)
         {
@@ -48,7 +48,7 @@ namespace keknani_server.Controllers
             return Ok(dog);
         }
 
-        [Authorize(Role.Admin)]
+        //[Authorize(Role.Admin)]
         [HttpPost]
         public ActionResult<DogResponse> Create(DogCreateRequest model)
         {
@@ -56,7 +56,7 @@ namespace keknani_server.Controllers
             return Ok(dog);
         }
 
-        [Authorize(Role.Admin)]
+        //[Authorize(Role.Admin)]
         [HttpPut("{id:int}")]
         public ActionResult<DogResponse> Update(int id, [FromForm] DogUpdateRequest model)
         {
@@ -64,7 +64,7 @@ namespace keknani_server.Controllers
             return Ok(dog);
         }
 
-        [Authorize(Role.Admin)]
+        //[Authorize(Role.Admin)]
         [HttpDelete("{id:int}")]
         public IActionResult Delete(int id)
         {

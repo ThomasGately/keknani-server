@@ -9,6 +9,12 @@ using keknani_server.Helpers;
 using keknani_server.Middleware;
 using keknani_server.Services;
 
+using Microsoft.AspNetCore.Http.Features;
+using System.IO;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.FileProviders;
+
+
 namespace keknani_server
 {
     public class Startup
@@ -34,7 +40,15 @@ namespace keknani_server
 
             // configure DI for application services
             services.AddScoped<IAccountService, AccountService>();
+            services.AddScoped<IDogService, DogService>();
             services.AddScoped<IEmailService, EmailService>();
+
+            services.Configure<FormOptions>(o =>
+            {
+                o.ValueLengthLimit = int.MaxValue;
+                o.MultipartBodyLengthLimit = int.MaxValue;
+                o.MemoryBufferThreshold = int.MaxValue;
+            });
         }
 
         // configure the HTTP request pipeline
@@ -45,7 +59,7 @@ namespace keknani_server
 
             // generated swagger json and swagger ui middleware
             app.UseSwagger();
-            app.UseSwaggerUI(x => x.SwaggerEndpoint("/swagger/v1/swagger.json", "ASP.NET Core Sign-up and Verification API"));
+            app.UseSwaggerUI(x => x.SwaggerEndpoint("/swagger/v1/swagger.json", "KekNani"));
 
             app.UseRouting();
 
@@ -63,6 +77,14 @@ namespace keknani_server
             app.UseMiddleware<JwtMiddleware>();
 
             app.UseEndpoints(x => x.MapControllers());
+
+            app.UseHttpsRedirection();
+            app.UseStaticFiles();
+            app.UseStaticFiles(new StaticFileOptions()
+            {
+                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"Resources")),
+                RequestPath = new PathString("/Resources")
+            });
         }
     }
 }
